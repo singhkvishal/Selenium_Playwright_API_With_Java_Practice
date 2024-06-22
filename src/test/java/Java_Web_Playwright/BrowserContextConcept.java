@@ -25,7 +25,7 @@ public class BrowserContextConcept {
 		BrowserContext brcx2 = browser.newContext();
 		Page p2 = brcx2.newPage();
 		p2.navigate("https://demoqa.com");
- 		System.out.println(p2.title());
+		System.out.println(p2.title());
 
 		BrowserContext brcx3 = browser.newContext();
 		Page p3 = brcx3.newPage();
@@ -41,5 +41,4 @@ public class BrowserContextConcept {
 		p3.close();
 		brcx3.close();
 	}
-
 }
