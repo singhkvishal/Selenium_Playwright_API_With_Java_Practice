@@ -2,6 +2,7 @@ package Page_Factory_In_selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -38,5 +39,9 @@ public class BrowserStackSetup {
         objBrowserStackSignUpPage.enterBusinessEmail("TestUser@gmail.com");
         objBrowserStackSignUpPage.enterPasswrod("TestUserPassword");
         objBrowserStackSignUpPage.TermAndCondition();
+    }
+    @AfterTest
+    public void Close(){
+        driver.close();
     }
 }

@@ -30,7 +30,7 @@ public class BrowserStackSignUpPage {
 
 
     public BrowserStackSignUpPage(WebDriver driver) {
-        this.driver = driver;
+       // this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 

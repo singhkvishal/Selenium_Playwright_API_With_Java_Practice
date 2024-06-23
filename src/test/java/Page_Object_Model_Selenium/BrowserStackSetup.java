@@ -7,7 +7,6 @@ import org.testng.annotations.*;
 import java.time.Duration;
 
 public class BrowserStackSetup {
-    String driverPath = "C:\\geckodriver.exe";
     WebDriver driver;
     BrowserStackHomePage objBrowserStackHomePage;
     BrowserStackSignUpPage objBrowserStackSignUpPage;
@@ -18,6 +17,7 @@ public class BrowserStackSetup {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://www.browserstack.com/");
+        driver.manage().window().maximize();
     }
 
     @Test(priority = 1)
@@ -30,9 +30,11 @@ public class BrowserStackSetup {
     @Test(priority = 2)
     public void enter_userDetails() {
         objBrowserStackSignUpPage = new BrowserStackSignUpPage(driver);
+        objBrowserStackSignUpPage.Click_On_SignUp();
         objBrowserStackSignUpPage.veryHeader();
         objBrowserStackSignUpPage.enterFullName("TestUser");
         objBrowserStackSignUpPage.enterBusinessEmail("TestUser@gmail.com");
         objBrowserStackSignUpPage.enterPasswrod("TestUserPassword");
+        objBrowserStackSignUpPage.TermAndCondition();
     }
 }
