@@ -15,6 +15,10 @@ public class TestParallel {
     public void method2() {
         long     id = Thread.currentThread().getId();
         System.out.println("Inside method2()" + "Thread Name =" + id);
-        //Assert.assertEquals(message, messageUtil.printMessage());
+    }
+    @Test
+    public void method3() {
+        long     id = Thread.currentThread().getId();
+        System.out.println("Inside method3()" + "Thread Name =" + id);
     }
 }
