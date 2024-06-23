@@ -37,4 +37,8 @@ public class BrowserStackSetup {
         objBrowserStackSignUpPage.enterPasswrod("TestUserPassword");
         objBrowserStackSignUpPage.TermAndCondition();
     }
+    @AfterTest
+    public void Close(){
+        driver.close();
+    }
 }
