@@ -14,6 +14,8 @@ public class AutoWaitConcept {
 
 		//text locators 
 		Page page = browser.newPage();
+		// Block current thread for 60s and ensure the events are dispatched.
+		page.waitForTimeout(60_000);
 		page.navigate("https://www.bigbasket.com/");
 		Locator login = page.locator("//*[text()=\"Login/ Sign Up\"]");
 		login.click();
