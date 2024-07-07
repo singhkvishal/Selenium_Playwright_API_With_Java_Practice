@@ -1,14 +1,12 @@
 
 <h2 align="center">
-  Welcome to Vishal Singh World!
+  Welcome to Vishal Singh's World!
   <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
 </h2>
 
 <p align="center">
   <a href="https://github.com/singhkvishal"><img src="https://readme-typing-svg.herokuapp.com/?lines=QA%20Automation%20Tester;End%20To%20End%20Automation;15%2B%20years%20of%20coding%20experience;Always%20learning%20new%20things&center=true&width=380&height=45"></a>
 </p>
-
-
 
 <a href="https://komarev.com/ghpvc/?username=singhkvishal">
   <img align="right" src="https://komarev.com/ghpvc/?username=singhkvishal&label=Visitors&color=0e75b6&style=flat" alt="Profile visitor" />
@@ -27,8 +25,9 @@
 
 <p align="center"> 
   <samp>
-    <a href="https://www.google.com/search?q=Vishal Singh">「 Google Me 」</a>
+ <!--   <a href="https://www.google.com/search?q=Vishal Singh">「 Google Me 」</a>
     <br>
+-->
     「 I am a full stack QA Automation developer from <b>India</b> 」
     <br>
     <br>
@@ -36,9 +35,9 @@
 </p>
 
 <p align="center">
- <a href="https://QAQutomationHelper.com" target="blank">
+ <!--<a href="https://QAQutomationHelper.com" target="blank">
   <img src="https://img.shields.io/badge/Website-DC143C?style=for-the-badge&logo=medium&logoColor=white" alt="singhkvishal" />
- </a>
+ </a> -->
  <a href="https://www.linkedin.com/in/vishal-singh-382090b8/" target="_blank">
   <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="singhkvishal"/>
  </a>
@@ -52,7 +51,7 @@
 # About me
 
 <p>
- <img align="right" width="350" src="/assets/programmer.gif" alt="Coding gif" />
+ <img align="right" width="350" src="./programmer.gif" alt="Coding gif" />
 
 ✌️ &emsp; Enjoy to Automate Web application , Desktop Application /API testing and sharing knowledge <br/><br/>
 ❤️ &emsp; Love to writing code and learning new features<br/><br/>
