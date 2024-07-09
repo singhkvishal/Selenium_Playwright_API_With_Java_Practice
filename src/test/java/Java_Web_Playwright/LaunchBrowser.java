@@ -14,7 +14,7 @@ public class LaunchBrowser {
     public void LaunchBrowser() {
         try (Playwright playwright = Playwright.create()) {
             BrowserType.LaunchOptions launchOption = new BrowserType.LaunchOptions().setHeadless(false)
-                    .setDevtools(true)
+                    //.setDevtools(true)  has been deprecated
                     //.setProxy(new Proxy("Proxy"))
                     .setSlowMo(1000);
 

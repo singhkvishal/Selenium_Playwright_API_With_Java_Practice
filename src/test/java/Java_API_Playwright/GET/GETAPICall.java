@@ -22,9 +22,9 @@ public class GETAPICall {
 
     @BeforeTest
     public void setup() {
-        playwright = Playwright.create();
-        request = playwright.request();
-        requestContext = request.newContext();
+        requestContext = Playwright.create().request().newContext();
+        //request = playwright.request();
+        //requestContext = request.newContext();
     }
 
     @Test
