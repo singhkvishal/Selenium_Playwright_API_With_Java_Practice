@@ -1,0 +1,73 @@
+<HTML><head>
+<title>null Execution Report </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css">
+<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script  href="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.js"></script>
+<style>
+   body{
+   padding: 60px;
+   }
+  .panel-heading: .colpsible-panel:after{; 
+   
+   font-family: 'Glyphicons Halflings'; 
+   content: "\e114";
+   float: right; 
+   color: #408080;     
+   }
+   .panel-heading .colpsible-panel.collapsed:after {
+   Content: "\e080"; 
+  }
+		#table_detail .hidden_row {
+			 display: none;
+		}
+	  </style>
+		
+	<script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+		$('#table_detail').DataTable();
+		});
+	</script>
+	<script type="text/javascript" charset="utf-8">
+		function showHideRow(row) {
+				$("#"+row).toggle();
+			}
+	</script>
+</head>
+<BODY>
+
+<nav Class ="navbar navbar-inverse >
+<div Class ="Container-fluid">
+><!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" Class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a Class="navbar-brand">null Execution Report </a>
+</div>
+</nav>
+
+<table class="table table-hover" id="table_detail">
+<thead class="info-color">
+		<tr style="text-align: center; vertical-align: middle; background-color:#A4A4A4;">
+			<th> Test ID</th>  <th> Test Senarios</th> <th>Deal ID</th> <th> Status</th><th>Execution Time</th>
+		</tr>
+	</thead>
+
+<tr onclick="showHideRow('24906a');"style="text-align:left;vertical-align:middle;background-color:#bef2ff;">
+		<td>main</td>
+		<td>First Test</td>
+		<td>Deal ID</td>
+<td style="text-align: left; vertical-align: middle;background-color:oragered;">Failed</td>		<td>2024.07.13.11.57.45</td>
+<tbody id=24906a class=hidden_row style="text-align:left; vertical-align:middle; background-color:E6EFDE;
+><tr style="test-align:center; vertical-align: middle;background-color:CFF39C;"><th> Test Step </td><th>Test Description</td><th>Status</th></tr>
+<tr><td>Test Step1</td><td>b24c12<td style="text-align: left; vertical-align: middle;background-color:oragered;">Failed</td></td><tr><td>Test Step2</td><td>main<td style="text-align: left; vertical-align: middle;background-color:oragered;">Failed</td></td><tr><td>Test Step3</td><td>main<td style="text-align: left; vertical-align: middle;background-color:oragered;">Failed</td></td></tbody>

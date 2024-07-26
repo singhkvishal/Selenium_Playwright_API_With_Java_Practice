@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class Return_Generic_Type {
     public static class Animal {
-        private Map<String, Return_Generic_Type.Animal> friends = new HashMap<>();
+        private Map<String, Animal> friends = new HashMap<>();
 
-        public void addFriend(String name, Return_Generic_Type.Animal animal) {
+        public void addFriend(String name, Animal animal) {
             friends.put(name, animal);
         }
 
@@ -16,27 +16,27 @@ public class Return_Generic_Type {
         }
     }
 
-    public static class Dog extends Return_Generic_Type.Animal {
+    public static class Dog extends Animal {
         public void bark() {
             System.out.println("i am dog");
         }
     }
 
-    public static class Duck extends Return_Generic_Type.Animal {
+    public static class Duck extends Animal {
         public void quack() {
             System.out.println("i am duck");
         }
     }
 
     public static void main(String[] args) {
-        Return_Generic_Type.Animal animals = new Return_Generic_Type.Animal();
-        animals.addFriend("dog", new Return_Generic_Type.Dog());
-        animals.addFriend("duck", new Return_Generic_Type.Duck());
+        Animal animals = new Animal();
+        animals.addFriend("dog", new Dog());
+        animals.addFriend("duck", new Duck());
 
-        Return_Generic_Type.Dog dog = animals.callFriend("dog");
+        Dog dog = animals.callFriend("dog");
         dog.bark();
 
-        Return_Generic_Type.Duck duck = animals.callFriend("duck");
+        Duck duck = animals.callFriend("duck");
         duck.quack();
 
     }
