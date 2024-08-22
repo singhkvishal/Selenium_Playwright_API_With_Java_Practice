@@ -10,7 +10,6 @@ public class ElementsLocators {
     Playwright playwright;
     Browser browser;
     Page page;
-
     @BeforeSuite
     public void Setup() {
         playwright = Playwright.create();
@@ -22,7 +21,7 @@ public class ElementsLocators {
     @Test
     public void multipleElementsUsingLambaForeach() {
         page.navigate("https://www.orangehrm.com/orangehrm-30-day-trial/?");
-        Locator countryOptions = page.locator("select#Form_getForm_Country option");
+        Locator countryOptions = page.locator("css=select#Form_getForm_Country option");
         System.out.println(countryOptions.count());
         List<String> optionsTextList = countryOptions.allTextContents();
         optionsTextList.forEach(ele -> System.out.println(ele));
@@ -32,7 +31,7 @@ public class ElementsLocators {
     public void multipleElementsUsingListFor() {
         page.navigate("https://www.orangehrm.com/orangehrm-30-day-trial/?");
 
-        Locator countryOptions = page.locator("select#Form_getForm_Country option");
+        Locator countryOptions = page.locator("css=select#Form_getForm_Country option");
         System.out.println(countryOptions.count());
 
         List<String> optionsTextList = countryOptions.allTextContents();
@@ -45,7 +44,7 @@ public class ElementsLocators {
     public void multipleElementsUsingNthIndex() {
         page.navigate("https://www.orangehrm.com/orangehrm-30-day-trial/?");
 
-        Locator countryOptions = page.locator("select#Form_getForm_Country option");
+        Locator countryOptions = page.locator("css=select#Form_getForm_Country option");
         System.out.println(countryOptions.count());
 
         for (int i = 0; i < countryOptions.count(); i++) {
@@ -61,7 +60,7 @@ public class ElementsLocators {
 
         Locator contactSales = page.locator("text = Contact Sales");
 
-        //contactSales.click(); -- when there are multiple elements for an Locator, then Playwright Exception is thrown
+        //contactSales.click(); -- when there are multiple elements for a Locator, then Playwright Exception is thrown
 
         //com.microsoft.playwright.PlaywrightException: Error {
         //Error: strict mode violation: "text= Contact Sales" resolved to 2 elements:

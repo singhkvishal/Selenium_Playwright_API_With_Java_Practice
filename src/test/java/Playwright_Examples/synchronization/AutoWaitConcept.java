@@ -30,6 +30,5 @@ public class AutoWaitConcept {
 		page.locator("//button[@type=\"submit\"]").click();
 
 		page.locator("//*[text()=\"Verify Mobile Number\"]").isVisible();
-		
 	}
 }

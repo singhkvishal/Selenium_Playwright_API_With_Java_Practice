@@ -1,25 +1,19 @@
-package Playwright_Examples.elementLocators;
+package Playwright_Examples.recordVideos;
 
 import java.nio.file.Paths;
 
 import com.microsoft.playwright.*;
 
-
 public class Example {
   public static void main(String[] args) {
     try (Playwright playwright = Playwright.create()) {
-      Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions()
-        .setHeadless(false));
+      Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
       BrowserContext context = browser.newContext();
-      
-      context.tracing().start(new Tracing.StartOptions()
-    		  .setScreenshots(true)
-    		  .setSnapshots(true));
+
+      context.tracing().start(new Tracing.StartOptions().setScreenshots(true).setSnapshots(true));
 
       // Open new page
       Page page = context.newPage();
-
-      // Go to https://academy.naveenautomationlabs.com/
       page.navigate("https://academy.naveenautomationlabs.com/");
 
       // Click text=Login
@@ -28,7 +22,7 @@ public class Example {
       page.pause();
       // Click button:has-text("Sign Up")
       page.click("button:has-text(\"Sign Up\")");
-     
+
       // Click [placeholder="Name"]
       page.click("[placeholder=\"Name\"]");
 
@@ -37,7 +31,6 @@ public class Example {
 
       // Fill [placeholder="Email"]
       page.fill("[placeholder=\"Email\"]", "testautomation@gmail.com");
-
 
       // Fill [placeholder="Create Password"]
       page.fill("[placeholder=\"Create Password\"]", "test123");
@@ -59,10 +52,9 @@ public class Example {
 
       // Click #loginFormHtml div [aria-label="Close"]
       page.click("#loginFormHtml div [aria-label=\"Close\"]");
-      
-      context.tracing().stop(new Tracing.StopOptions()
-    		  .setPath(Paths.get("trace.zip")));
-      
+
+      context.tracing().stop(new Tracing.StopOptions().setPath(Paths.get("trace.zip")));
+
     }
   }
 }
