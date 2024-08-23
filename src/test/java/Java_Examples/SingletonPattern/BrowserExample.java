@@ -19,7 +19,7 @@ public class BrowserExample {
         }
         return  browserExample;
     }
-    public void DisplayMessage(){
-        System.out.println("Browser Info");
+    public void DisplayMessage(String threadId){
+        System.out.println("Browser Info : "+threadId);
     }
 }

@@ -5,7 +5,7 @@ public class TestBrowser {
         //BrowserExample.getInstance().DisplayMessage();
         
         Runnable task = () -> {
-            BrowserExample.getInstance().DisplayMessage();
+            BrowserExample.getInstance().DisplayMessage(Thread.currentThread().getName());
         };
         Thread thread1 = new Thread(task);
         Thread thread2 = new Thread(task);
