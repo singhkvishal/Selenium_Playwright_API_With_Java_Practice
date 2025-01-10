@@ -11,7 +11,7 @@ public class IgnoreSSLErrors {
             BrowserContext browserContext = browser.newContext(newContextOptions);
 
             Page page = browserContext.newPage();
-            page.navigate("https://example.com/");
+            page.navigate("file:///C:/Users/vishal/Downloads/Finalise%20CV%20%E2%80%93%20LiveCareer.mhtml");
             page.close();
         }
     }

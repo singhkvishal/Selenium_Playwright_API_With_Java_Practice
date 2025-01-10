@@ -12,6 +12,7 @@
                 <methods>
                     <include name="method1"/>
                     <include name="method2"/>
+                    <include name="method3"/>
                 </methods>
             </class>
         </classes>
