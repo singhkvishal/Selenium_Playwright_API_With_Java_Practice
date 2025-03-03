@@ -30,4 +30,11 @@ public class ElementsInOddPositionOfArray {
 		for (int i = 0; i < arr.length; i=i+2)
 				System.out.print(arr[i] + " ");
 	}
+
+	@org.testng.annotations.Test
+	public void EvenNumbers() {
+		int arr[] = {33, 54, 12, 22, 33, 78, 99, 3, 12, 78, 90, 99, 15, 2, 3, 90, 22, 56};
+
+		Arrays.stream(arr).filter(o -> o % 2 == 0).forEach(System.out::println);
+	}
 }

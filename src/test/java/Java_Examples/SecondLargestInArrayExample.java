@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class SecondLargestInArrayExample {
     public static int getSecondLargest(int[] a, int total) {
 
-
         int temp;
         for (int i = 0; i < total; i++) {
             for (int j = i + 1; j < total; j++) {

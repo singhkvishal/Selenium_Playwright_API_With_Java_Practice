@@ -10,15 +10,13 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
 import java.util.List;
 
 public class HandleBrokenLinks {
     //Broken links means link is not working
     WebDriver driver;
+
     @BeforeSuite
     public void setUp() {
         driver = new ChromeDriver();
@@ -26,13 +24,13 @@ public class HandleBrokenLinks {
     }
 
     @Test(priority = 0)
-    public void CheckTheLinkIsBroken() throws MalformedURLException, IOException {
+    public void CheckTheLinkIsBroken() throws IOException, URISyntaxException {
         String linkSoapUI = driver.findElement(By.cssSelector("a[href*='brokenlink']")).getAttribute("href");
         CheckLinkIsNotBroken(linkSoapUI);
     }
 
     @Test(priority = 1)
-    public void CheckAllLinksAreNotBroken() throws InterruptedException, IOException {
+    public void CheckAllLinksAreNotBroken() throws IOException, URISyntaxException {
         List<WebElement> WebLinks = driver.findElement(By.id("gf-BIG")).findElements(By.tagName("a"));
         for (WebElement link : WebLinks) {
             String linkUrl = link.getAttribute("href");
@@ -40,8 +38,8 @@ public class HandleBrokenLinks {
         }
     }
 
-    public void CheckLinkIsNotBroken(String UrlLink) throws IOException {
-        URLConnection openConnection = new URL(UrlLink).openConnection();
+    public void CheckLinkIsNotBroken(String UrlLink) throws IOException, URISyntaxException {
+        URLConnection openConnection = new URI(UrlLink).toURL().openConnection();
         HttpURLConnection conn = (HttpURLConnection) openConnection;
         conn.setRequestMethod("HEAD");
         conn.connect();
@@ -59,7 +57,7 @@ public class HandleBrokenLinks {
     }
 
     @AfterSuite
-    public void TearDown(){
+    public void TearDown() {
         driver.close();
     }
 }

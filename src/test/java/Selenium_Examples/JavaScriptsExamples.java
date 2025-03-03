@@ -31,9 +31,13 @@ public class JavaScriptsExamples {
         int sum = 0;
         List<WebElement> values = driver.findElements(By.cssSelector(".tableFixHead td:nth-child(4)"));
 
-        for (int i = 0; i < values.size(); i++) {
-            sum = sum + Integer.parseInt(values.get(i).getText());
+        for (WebElement value : values) {
+            sum = sum + Integer.parseInt(value.getText());
         }
+
+        /*for (int i = 0; i < values.size(); i++) {
+            sum = sum + Integer.parseInt(values.get(i).getText());
+        }*/
 
         System.out.println(sum);
         driver.findElement(By.cssSelector(".totalAmount")).getText();

@@ -20,6 +20,12 @@ public class SwitchToNewWindow {
         driver.get("https://www.google.com");
     }
 
+    @Test
+    public void SetValueOnTextBox(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("document.getElementById('q').value='Vishal'");
+
+    }
     @Test(priority = 1)
     public void ScrollPage() {
         JavascriptExecutor js = (JavascriptExecutor) driver;

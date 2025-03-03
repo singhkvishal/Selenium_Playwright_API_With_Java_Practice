@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <suite name="My suite" parallel="methods" thread-count="5">
+     <suite name="My suite" parallel="tests" thread-count="5">
+     <suite name="My suite" parallel="classes" thread-count="5">
+     <suite name="My suite" parallel="instances" thread-count="5">
+     -->
+<suite name="All Test Suite" parallel="tests" thread-count="5">
+    <test verbose="2" preserve-order="true" name="./Selenium_Playwright_API_With_Java_Practice" parallel = "methods">
+        <classes>
+            <class name="Parallel_Execution.TestParallel">
+                <methods>
+                    <include name="method1"/>
+                    <include name="method2"/>
+                    <include name="method3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

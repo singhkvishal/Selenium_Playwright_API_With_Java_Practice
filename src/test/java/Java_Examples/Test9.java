@@ -11,9 +11,6 @@ public class Test9 {
         String t1=new String("Test");
         String t=new String("Test");
 
-
-
-
         System.out.println("T="+t.hashCode());
         System.out.println("T1="+t1.hashCode());
 

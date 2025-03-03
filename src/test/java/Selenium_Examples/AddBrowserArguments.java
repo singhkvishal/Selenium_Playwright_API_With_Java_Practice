@@ -4,11 +4,12 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 public class AddBrowserArguments {
     @Test
-    public void Test1(){
+    public void Test1() {
         //System.setProperty("webdriver.chrome.driver", chromedriverPath);
         ChromeOptions options = new ChromeOptions();
         // options.addArguments("headless");
@@ -32,8 +33,19 @@ public class AddBrowserArguments {
 
         WebDriver driver = new ChromeDriver(options);
         //driver.get("https://www.selenium.dev/selenium/web/web-form.html");
-
-
+        
         driver.get("https://example.com/");
+    }
+
+    @Test
+    public void Test2() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        options.merge(capabilities);
+        ChromeDriver driver = new ChromeDriver(options);
+        driver.get("https://developer.chrome.com/docs/chromedriver/capabilities");
+        driver.manage().window().maximize();
     }
 }

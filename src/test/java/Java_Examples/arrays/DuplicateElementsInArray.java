@@ -1,9 +1,15 @@
 package Java_Examples.arrays;
 
-import java.util.Arrays;
+import org.testng.annotations.Test;
+
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class DuplicateElementsInArray {
-	public static void main(String[] args) {
+	@Test
+	public void Test() {
 		int arr[] = {33, 54, 12, 22, 33, 78, 99, 3, 12, 78, 90, 99, 15, 2, 3, 90, 22, 56};
 
 		System.out.println("Values In Array");
@@ -17,5 +23,20 @@ public class DuplicateElementsInArray {
 				}
 			}
 		}
+	}
+
+
+
+	@Test
+	public void DuplicateElements() {
+		List<Integer> itemsList = Arrays.asList(10, 12, 10, 33, 40, 40, 61, 61);
+		Set<Integer> newitemSet = new HashSet<>();
+
+		System.out.println("The list of duplicate Items: ");
+		itemsList.stream().filter(nums -> !newitemSet.add(nums)).forEach(System.out::println);
+
+		newitemSet.clear();
+		System.out.println("Remove the duplicate Items: ");
+		itemsList.stream().filter(nums -> newitemSet.add(nums)).forEach(System.out::println);
 	}
 }
