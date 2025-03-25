@@ -21,12 +21,9 @@ public class RestAssuredRequests {
 
     @Test
     public void postRequest() {
-        Response response = given()
-                .header("Content-type", "application/json")
-                .and()
-                .body(requestBody)
-                .when()
-                .post("/posts")
+        Response response = given().header("Content-type", "application/json")
+                .and().body(requestBody)
+                .when().post("/posts")
                 .then()
                 .extract().response();
 

@@ -26,12 +26,12 @@ public class LoginDemoSteps_PF {
 
 		System.out.println("Inside Step - browser is open");
 
-		String projectPath = System.getProperty("user.dir");
-		System.out.println("Project path is : " + projectPath);
+		//String projectPath = System.getProperty("user.dir");
+		///System.out.println("Project path is : " + projectPath);
 
-		System.setProperty("webdriver.gecko.driver", projectPath + "/src/test/resources/drivers/geckodriver.exe");
+		//System.setProperty("webdriver.gecko.driver", projectPath + "/src/test/resources/drivers/geckodriver.exe");
 
-		driver = new FirefoxDriver();
+		driver = new ChromeDriver();
 
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
@@ -40,7 +40,7 @@ public class LoginDemoSteps_PF {
 
 	}
 
-	@And("user is on login page")
+	@And("Validate user is on login page")
 	public void user_is_on_login_page() {
 
 		driver.navigate().to("https://example.testproject.io/web/");
@@ -69,7 +69,7 @@ public class LoginDemoSteps_PF {
 	}
 
 
-	@Then("user is navigated to the home page")
+	@Then("Validate user is navigated to the home page")
 	public void user_is_navigated_to_the_home_page() throws InterruptedException {
 
 		home.checkLogoutIsDisplayed();

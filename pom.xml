@@ -16,6 +16,13 @@
 
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.applitools/eyes-selenium-java5 -->
+        <dependency>
+            <groupId>com.applitools</groupId>
+            <artifactId>eyes-selenium-java5</artifactId>
+            <version>5.77.0</version>
+        </dependency>
+
         <!-- Playwright Dependency -->
         <dependency>
             <groupId>com.microsoft.playwright</groupId>

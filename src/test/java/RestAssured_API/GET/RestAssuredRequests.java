@@ -18,10 +18,8 @@ public class RestAssuredRequests {
 
     @Test
     public void getRequest() {
-        Response response = given()
-                .contentType(ContentType.JSON)
-                .when()
-                .get("/posts")
+        Response response = given().contentType(ContentType.JSON)
+                .when().get("/posts")
                 .then()
                 .extract().response();
 

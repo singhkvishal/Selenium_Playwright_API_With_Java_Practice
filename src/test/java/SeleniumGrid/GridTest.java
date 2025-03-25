@@ -9,6 +9,11 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+//1-- Start the Selenium Sum
+// java -jar selenium-server-4.29.0.jar grid
+//2- Start the Selenium Grid
+//java -jar selenium-server-4.29.0.jar hub
+
 public class GridTest {
     @Test
     public void Chrome() throws MalformedURLException, URISyntaxException {

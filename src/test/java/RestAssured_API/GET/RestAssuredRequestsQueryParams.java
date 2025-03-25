@@ -23,4 +23,14 @@ public class RestAssuredRequestsQueryParams {
         Assert.assertEquals(200, response.statusCode());
         Assert.assertEquals("Meghan_Littel@rene.us", response.jsonPath().getString("email[3]"));
     }
+    @Test
+    public void GetTest() {
+        Response response = RestAssured.get("https://reqres.in/api/users?page=2");
+        System.out.println("Status Code =>" + response.getStatusCode());
+        System.out.println("Time =>" + response.getTime());
+        System.out.println("Body =>" + response.getBody().asString());
+        System.out.println("Status Line =>" + response.getStatusLine());
+        System.out.println("Header   =>" + response.getHeader("content-type"));
+        Assert.assertEquals(response.getStatusCode(), 200);
+    }
 }
