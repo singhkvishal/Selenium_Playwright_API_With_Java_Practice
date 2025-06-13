@@ -61,6 +61,7 @@ public class ActionClass {
 
         // get element color in rgba format
         String s = m.getCssValue("color");
+
         System.out.println("rgba code for color element: " + s);
 
         // object of Actions class to click and hold

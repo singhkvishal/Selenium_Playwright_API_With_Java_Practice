@@ -1,5 +1,6 @@
 package Selenium_BDD_Framework.resources.resources.test.java.StepsForHooks;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -25,8 +26,8 @@ public class HooksDemoSteps {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		
-		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		
 	}
@@ -36,12 +37,12 @@ public class HooksDemoSteps {
 		System.out.println("   I am inside setup2 \n");
 	}
 	
-	@After(order=1)
-	public void teardown() {
+	/*@After(order=1)
+	public void teardown1() {
 		System.out.println("   I am inside teardown");
 		driver.close();
 		driver.quit();
-	}
+	}*/
 	
 	@After(order=2)
 	public void teardown2() {
@@ -59,18 +60,18 @@ public class HooksDemoSteps {
 	}
 	
 	
-	@Given("user is on login page")
+	/*@Given("user is on login page")
 	public void user_is_on_login_page() {
-	}
+	}*/
 
 	@When("user enters valid username and password")
 	public void user_enters_valid_username_and_password() {
 	}
 
-	@And("clicks on login button")
+	/*@And("clicks on login button")
 	public void clicks_on_login_button() {
 	}
-
+*/
 	@Then("user is navigated to the home page")
 	public void user_is_navigated_to_the_home_page() {
 	}

@@ -1,4 +1,5 @@
 Feature: feature to test google search functionality
+Background: Launch Browser
 
   Scenario: Validate google search is working
     Given browser window is open

@@ -18,7 +18,7 @@ public class JavaStream_CheckWebFilterIsWorking {
 
         //1 results
         List<WebElement> filteredList = veggies.stream().filter(veggie -> veggie.getText().contains("Rice")).
-                collect(Collectors.toList());
+                toList();
         //1 result
         Assert.assertEquals(veggies.size(), filteredList.size());
     }

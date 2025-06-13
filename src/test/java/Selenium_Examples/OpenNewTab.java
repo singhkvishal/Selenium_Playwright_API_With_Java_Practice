@@ -33,12 +33,17 @@ public class OpenNewTab {
         }// opens all the tabs
 
         Set<String> abc = driver.getWindowHandles();//4
-        Iterator<String> it = abc.iterator();
+        for (String s : abc) {
+            driver.switchTo().window(s);
+            System.out.println(driver.getTitle());
+        }
 
+       /*
+        Iterator<String> it = abc.iterator();
         while (it.hasNext()) {
             driver.switchTo().window(it.next());
             System.out.println(driver.getTitle());
-        }
+        }*/
 
     }
 }

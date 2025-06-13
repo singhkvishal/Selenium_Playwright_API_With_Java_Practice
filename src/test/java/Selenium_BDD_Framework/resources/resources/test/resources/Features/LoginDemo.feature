@@ -1,6 +1,6 @@
 Feature: Test login functionality
 
-#  Background:
+  Background:
 
   Scenario Outline: Check login is successful with valid credentials
     Given browser is open

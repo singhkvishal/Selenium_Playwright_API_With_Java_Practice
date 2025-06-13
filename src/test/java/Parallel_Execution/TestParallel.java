@@ -15,20 +15,20 @@ public class TestParallel {
     @Test
     public void method1() {
         String tID = Thread.currentThread().getName();
-        System.out.println("Inside method1()" + " Thread Name =" + tID);
+        System.out.println("Inside method1()" + " Thread ID =" + Thread.currentThread().threadId());
         //Assert.assertEquals(message, messageUtil.printMessage());
     }
 
     @Test
     public void method2() {
         String tID=Thread.currentThread().getThreadGroup().getName();
-        System.out.println("Inside method2()" + "Thread Name =" + tID);
+        System.out.println("Inside method2()" + "Thread ID =" + Thread.currentThread().threadId());
     }
 
     @Test
     public void method3() {
         String tID=Thread.currentThread().getThreadGroup().getName();
-        System.out.println("Inside method3()" + "Thread Name =" + tID);
+        System.out.println("Inside method3()" + "Thread ID =" + Thread.currentThread().threadId());
     }
 
     @AfterSuite

@@ -41,8 +41,10 @@ public class AddBrowserArguments {
     public void Test2() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
         options.merge(capabilities);
         ChromeDriver driver = new ChromeDriver(options);
         driver.get("https://developer.chrome.com/docs/chromedriver/capabilities");

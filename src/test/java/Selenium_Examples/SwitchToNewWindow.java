@@ -43,7 +43,6 @@ public class SwitchToNewWindow {
 
     @Test(priority = 3)
     public void demoSwitchToFrame2() {
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.name("intercom-launcher-frame")));
 

@@ -32,7 +32,6 @@ public class TestDemo {
         Assert.assertTrue(fileContent.contains("Starting ChromeDriver"));
     }
 
-
     protected File getTempFile(String prefix, String suffix) {
         File logLocation = null;
         try {

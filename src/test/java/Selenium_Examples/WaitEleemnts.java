@@ -52,8 +52,7 @@ public class WaitEleemnts {
 
     @Test(priority = 2)
     public void FluentWait_Test() {
-
-        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+        Wait<WebDriver> wait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(NoSuchElementException.class);

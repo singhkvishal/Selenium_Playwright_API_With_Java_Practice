@@ -1,7 +1,7 @@
 package Java_Examples.strings;
 //A palindrome string is the same string backwards or forwards.
 public class checkPalindromeString {
-    public static void main(String[] args) {
+    public static void main(String ... args) {
         String sValue = "ABCCBA";
         int aLen = sValue.length();
 

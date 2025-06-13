@@ -57,11 +57,10 @@ public class SeleniumWait {
 
         //========================
         WebElement revealed = driver.findElement(By.id("revealed"));
-        Wait<WebDriver> wait =
-                new FluentWait<>(driver)
-                        .withTimeout(Duration.ofSeconds(2))
-                        .pollingEvery(Duration.ofMillis(300))
-                        .ignoring(ElementNotInteractableException.class);
+        Wait<WebDriver> wait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(2))
+                .pollingEvery(Duration.ofMillis(300))
+                .ignoring(ElementNotInteractableException.class);
 
         wait.until(
                 d -> {

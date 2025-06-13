@@ -3,10 +3,9 @@ package Java_Examples.strings;
 public class SpecialCharactersInString {
 
 	public static void main(String[] args) {
-
 		int count = 0;
-		String s = "{:}?<>This&is#$Special!@Characters%^test*(";
-
+		//String s = "{:}?<>This&is#$Special!@Characters%^test*(";
+		String s = "vishal^";
 		System.out.println("Input String: " + s);
 
 		count = usingCharacterClassSpecialCharactersCount(s);
@@ -15,7 +14,6 @@ public class SpecialCharactersInString {
 			System.out.println("No Special Characters Found");
 		else
 			System.out.println("String has Special Characters\n" + count + " " + "Special Characters Found");
-
 	}
 
 	public static int usingCharacterClassSpecialCharactersCount(String str) {

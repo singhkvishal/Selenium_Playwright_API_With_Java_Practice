@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="methods">
+    <test thread-count="3"  name="D:/Study/GitProject/Selenium_Playwright_API_With_Java_Practice/src/test/java/SeleniumDockerGrid/DockerTest.java">
+        <classes>
+            <class name="SeleniumDockerGrid.DockerTest">
+                <methods>
+                    <include name="Chrome"/>
+                    <include name="Chrome1"/>
+                    <include name="Chrome3"/>
+                    <include name="FireFox"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -23,7 +23,6 @@ public class HashMap_Example {
     }
 
     public static void main(String[] args) {
-
         int nums[] = {2, 11, 5, 4, 20};
         int target = 25;
         int result[] = findTwoSum(nums, target);

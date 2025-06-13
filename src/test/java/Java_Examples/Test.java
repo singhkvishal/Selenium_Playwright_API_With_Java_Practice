@@ -12,5 +12,7 @@ public class Test {
 
         Integer psum= list.parallelStream().reduce(5,(a,b)->a+b);
         System.out.println(sum.equals(psum));
+        int a=10;
+        int b=20;
     }
 }

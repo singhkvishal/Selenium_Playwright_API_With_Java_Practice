@@ -1,5 +1,6 @@
 package Selenium_BDD_Framework.resources.resources.test.java.StepDefinitions;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import Selenium_BDD_Framework.resources.resources.test.java.pagefactory.HomePage_PF;
@@ -33,8 +34,8 @@ public class LoginDemoSteps_PF {
 
 		driver = new ChromeDriver();
 
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 
 		//driver.manage().window().maximize();
 

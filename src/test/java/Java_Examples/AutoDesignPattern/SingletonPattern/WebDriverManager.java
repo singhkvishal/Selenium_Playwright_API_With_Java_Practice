@@ -11,20 +11,6 @@ public class WebDriverManager {
     private WebDriverManager() {
     }
 
-    private void initDriver(String browser) {
-        switch (browser) {
-            case "Chrome":
-                tlDriver.set(new ChromeDriver());
-                break;
-
-            case "fireFox":
-                tlDriver.set(new FirefoxDriver());
-                break;
-            default:
-                throw new IllegalArgumentException("Incorrect browser name" + browser);
-        }
-    }
-
     public static WebDriverManager getInstance(String browser) {
         if (instance == null) {
             synchronized (WebDriverManager.class) {
@@ -37,6 +23,20 @@ public class WebDriverManager {
             instance.initDriver(browser);
         }
         return instance;
+    }
+
+    private void initDriver(String browser) {
+        switch (browser) {
+            case "Chrome":
+                tlDriver.set(new ChromeDriver());
+                break;
+
+            case "fireFox":
+                tlDriver.set(new FirefoxDriver());
+                break;
+            default:
+                throw new IllegalArgumentException("Incorrect browser name" + browser);
+        }
     }
 
     public WebDriver getDriver() {

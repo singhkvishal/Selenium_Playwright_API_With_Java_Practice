@@ -1,13 +1,14 @@
 package RestAssured_API.POST;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.DisplayName;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-
-
 import static io.restassured.RestAssured.given;
+
 public class RestAssuredRequests {
     private static String requestBody = "{\n" +
             "  \"title\": \"foo\",\n" +
@@ -19,9 +20,12 @@ public class RestAssuredRequests {
         RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
     }
 
+    @DisplayName("Post Request using string Payload")
     @Test
     public void postRequest() {
-        Response response = given().header("Content-type", "application/json")
+        Response response = given()
+                .header("Content-type", "application/json")
+                //.header(ContentType.JSON)
                 .and().body(requestBody)
                 .when().post("/posts")
                 .then()
