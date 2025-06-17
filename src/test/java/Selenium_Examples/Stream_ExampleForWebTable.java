@@ -21,7 +21,7 @@ public class Stream_ExampleForWebTable {
 
         // capture text of all webelements into new(original) list
         List<String> originalList = elementsList.stream().map(WebElement::getText).toList();
-
+      
         // sort on the original list of step 3 -> sorted list
         List<String> sortedList = originalList.stream().sorted().toList();
 

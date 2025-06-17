@@ -6,13 +6,11 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-
 import static io.restassured.RestAssured.given;
 
 public class RestAssuredRequests {
 
-    private static String requestBody = "{\n" +
-            "  \"title\": \"bax\" \n}";
+    private static String requestBody = "{\n" + "  \"title\": \"bax\" \n}";
 
     @BeforeTest
     public static void setup() {

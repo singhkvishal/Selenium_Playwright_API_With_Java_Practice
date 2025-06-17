@@ -39,6 +39,9 @@ public class RestAssuredRequests {
         assertEquals(200, response.statusCode());
         assertEquals("qui est esse", response.jsonPath().getString("title[1]"));
     }
+//Use @PathParam for API calls that are meant to fetch, update, delete, or interact with a specific resource.
+// Use @QueryParam for APIs where parameters are used to sort, filter, or determine the format of the output
+// without changing the resource itself
 
     //https://httpbin.org/#/HTTP_Methods/get_get
     @Test
@@ -71,7 +74,7 @@ public class RestAssuredRequests {
     @Test
     public void Path_Parameters(){
         Response response=given()
-                .queryParam("id","1")
+                .pathParam("id","1")
                 .when()
                 .get("https://jsonplaceholder.typicode.com/posts/1");
         response.prettyPrint();

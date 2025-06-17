@@ -1,8 +1,11 @@
 Feature: First Test scenario Example
 
+  Background:
+    Given Launch the Browser
+
   @Sanity
   Scenario :  Test the Scenario
-    Given Launch the Browser
+
     When Validate the Browser is Launched
     And Enter the User name "UserName"
     And Enter the Password "Pass"
