@@ -3,6 +3,7 @@ package Playwright_Examples.recordVideos;
 import java.nio.file.Paths;
 
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.AriaRole;
 
 public class TracerInspection {
 	public static void main(String[] args) {
@@ -21,54 +22,19 @@ public class TracerInspection {
 			// Go to https://academy.naveenautomationlabs.com/
 			page.navigate("https://academy.naveenautomationlabs.com/");
 
-			// Click text=Store
-			page.click("text=Store");
-			// assert page.url().equals("https://academy.naveenautomationlabs.com/s/store");
-
-			// Click text=Login
-			page.click("text=Login");
-
-			// Click button:has-text("Sign Up")
-			page.click("button:has-text(\"Sign Up\")");
-
-			// Click [placeholder="Name"]
-			page.click("[placeholder=\"Name\"]");
-
-			// Fill [placeholder="Name"]
-			page.fill("[placeholder=\"Name\"]", "naveen");
-
-			// Press Tab
-			page.press("[placeholder=\"Name\"]", "Tab");
-
-			// Fill [placeholder="Email"]
-			page.fill("[placeholder=\"Email\"]", "naveen@gmail.com");
-
-			// Press Tab
-			page.press("[placeholder=\"Email\"]", "Tab");
-
-			// Fill [placeholder="Create Password"]
-			page.fill("[placeholder=\"Create Password\"]", "Test@123");
-
-			// Click text=+971
-			page.click("text=+971");
-
-			// Click text=United Arab Emirates (‫الإمارات العربية المتحدة‬‎)
-			page.click("text=United Arab Emirates (‫الإمارات العربية المتحدة‬‎)");
-
-			// Fill [placeholder="Mobile"]
-			page.fill("[placeholder=\"Mobile\"]", "7876543456");
-
-			// Click text=By signing up, I agree to the Terms of Use and Privacy Policy. >>
-			// i
-			page.click("text=By signing up, I agree to the Terms of Use and Privacy Policy. >> i");
-
-			// Click #loginFormHtml div [aria-label="Close"]
-			page.click("#loginFormHtml div [aria-label=\"Close\"]");
-
-			// Click text=Login
-			page.click("text=Login");
-			
-			
+			//page.pause();
+			page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Login")).click();
+			page.locator("#microfe-popup-login").contentFrame().getByPlaceholder("Name").click();
+			page.locator("#microfe-popup-login").contentFrame().getByPlaceholder("Name").fill("vishal singh");
+			page.locator("#microfe-popup-login").contentFrame().getByPlaceholder("Name").press("Tab");
+			page.locator("#microfe-popup-login").contentFrame().getByPlaceholder("Email address").fill("vishalsingh@gmail.com");
+			page.locator("#microfe-popup-login").contentFrame().getByPlaceholder("Email address").press("Tab");
+			page.locator("#microfe-popup-login").contentFrame().getByPlaceholder("Password").fill("123456");
+			page.locator("#microfe-popup-login").contentFrame().getByPlaceholder("Password").press("Tab");
+			page.locator("#microfe-popup-login").contentFrame().getByRole(AriaRole.BUTTON).first().press("Tab");
+			page.locator("#microfe-popup-login").contentFrame().getByPlaceholder("Enter your number").fill("+91 98749-2342");
+			page.locator("#microfe-popup-login").contentFrame().getByPlaceholder("Enter your number").press("Tab");
+			page.locator("#microfe-popup-login").contentFrame().locator("#loginPopupCloseBtn svg").click();
 			// Stop tracing and export it into a zip archive.
 			context.tracing().stop(new Tracing.StopOptions()
 			  .setPath(Paths.get("trace.zip")));
