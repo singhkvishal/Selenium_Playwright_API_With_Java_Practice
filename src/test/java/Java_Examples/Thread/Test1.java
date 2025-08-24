@@ -26,7 +26,7 @@ public class Test1 {
             t3.join();
             t4.join();
             t5.join();
-        } catch (Exception _) {
+        } catch (Exception e) {
         }
     }
 }

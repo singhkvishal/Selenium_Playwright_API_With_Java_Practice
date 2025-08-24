@@ -9,5 +9,7 @@ public class Main {
         // Calculating and printing the areas
         System.out.println("Area of Circle: " + myCircle.calculateArea());
         System.out.println("Area of Rectangle: " + myRectangle.calculateArea());
+        myRectangle.Test();
+        Shape.TestStatic();
     }
 }

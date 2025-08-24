@@ -1,6 +1,7 @@
 package SeleniumGrid;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -9,16 +10,18 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-//1-- Start the Selenium Sum
-// java -jar selenium-server-4.29.0.jar grid
-//2- Start the Selenium Grid
-//java -jar selenium-server-4.29.0.jar hub
+//1-- Start the Selenium standalone--- run if you are running from Same Machine
+// java -jar selenium-server-4.34.0.jar standalone
+//2- Start the Selenium Grid if running from different Machines
+//java -jar selenium-server-4.34.0.jar hub
+//java -jar selenium-server-4.34.0.jar node --hub http: http://192.168.1.38:4444
 
 public class GridTest {
     @Test
     public void Chrome() throws MalformedURLException, URISyntaxException {
         DesiredCapabilities cap=new DesiredCapabilities();
         cap.setBrowserName("chrome");
+        cap.setPlatform(Platform.WIN11);
         WebDriver driver =new RemoteWebDriver(new URI("http://192.168.1.38:4444").toURL(),cap);
         driver.get("https://www.google.com");
         driver.findElement(By.name("q")).sendKeys("Vishal Singh");

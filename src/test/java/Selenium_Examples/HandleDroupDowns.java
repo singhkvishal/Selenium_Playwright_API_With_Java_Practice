@@ -7,14 +7,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class HandleDroupDowns {
+    WebDriver driver   =null;
+    @BeforeTest
+    public void SetUp(){
+         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    }
     @Test(priority = 1)
     public void Test1() {
-        WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 
         Select sel = new Select(driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")));
@@ -24,7 +30,6 @@ public class HandleDroupDowns {
 
     @Test(priority = 2)
     public void Test2() throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         driver.findElement(By.id("divpaxinfo")).click();
         Thread.sleep(2000L);
@@ -41,8 +46,6 @@ public class HandleDroupDowns {
 
     @Test
     public void Test3() throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
         driver.get("https://www.makemytrip.com/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         //driver.findElement(By.xpath("//*[@data-cy='closeModal']")).click();

@@ -15,7 +15,7 @@ public class LinkedList_Example {
         linkedList1.add(50);
 
         // Print the LinkedList
-        System.out.println(STR."LinkedList:\{linkedList1}");
+        System.out.println("LinkedList:"+ linkedList1 );
 
         // Remove an element from the LinkedList
         linkedList1.removeFirst();

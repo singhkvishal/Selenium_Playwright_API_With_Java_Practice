@@ -20,8 +20,8 @@ public class StepsDefinitions {
     }
 
     //Entering correct username and password values
-    @And("Validate the Page")
-    public void ClickOnSignIn() {
+    @And("Validate the Page {string}")
+    public void validateThePage(String Value) {
         Assert.assertEquals(driver.getTitle(),"OrangeHRM");
     }
 
@@ -44,4 +44,6 @@ public class StepsDefinitions {
     public void closeBrowser() {
         driver.quit();
     }
+
+
 }

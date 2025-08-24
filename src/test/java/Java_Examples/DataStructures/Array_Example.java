@@ -12,7 +12,7 @@ public class Array_Example {
         for (int j : numbers) {
             sum += j;
         }
-        System.out.println(STR."Sum of array elements:\{sum}");
+        //System.out.println(STR."Sum of array elements:\{sum}");
 
         numbers[2] = 35; // Update an element in the array
 
