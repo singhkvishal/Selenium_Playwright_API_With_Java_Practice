@@ -1,16 +1,22 @@
-[ {
-  "courseName" : "Appium",
-  "purchasedDate" : "2025-08-24",
-  "amount" : 99,
-  "location" : "Asia"
-}, {
-  "courseName" : "WebServices",
-  "purchasedDate" : "2025-08-24",
-  "amount" : 21,
-  "location" : "Asia"
-}, {
-  "courseName" : "Jmeter",
-  "purchasedDate" : "2025-08-24",
-  "amount" : 76,
-  "location" : "Asia"
-} ]
+[
+    {
+    "courseName" : "Appium",
+    "purchasedDate" : "2025-08-30",
+    "amount" : 99,
+    "location" : "Asia"
+  }, {
+    "courseName" : "WebServices",
+    "purchasedDate" : "2025-08-30",
+    "amount" : 21,
+    "location" : "Asia"
+  }, {
+    "courseName" : "Jmeter",
+    "purchasedDate" : "2025-08-30",
+    "amount" : 76,
+    "location" : "Asia",
+    "discount" : {
+      "discountedAmount" : 10,
+      "discountPercentage" : 10
+    }
+  }
+]
