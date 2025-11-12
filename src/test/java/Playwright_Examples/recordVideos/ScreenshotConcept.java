@@ -13,13 +13,13 @@ public class ScreenshotConcept {
 		Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));//.setChannel("msedge"));
 
 		Page page = browser.newPage();
-		page.navigate("file:///C:/Users/vishal/Downloads/Finalise%20CV%20%E2%80%93%20LiveCareer.mhtml");
+		page.navigate("file:///"+System.getProperty("user.dir")+"//Logs//Installation _ Playwright Java.html");
 
 		byte b[] = page.screenshot();
 
-		page.locator("//*[@id=\"resumeDoc\"]/div[3]/div[2]").screenshot(new Locator.ScreenshotOptions().setPath(Paths.get("Resume.png")));
+		page.locator("//*[@class=\"navbar__inner\"]").screenshot(new Locator.ScreenshotOptions().setPath(Paths.get("Resume.png")));
 
-		//page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("screenshot.png")).setFullPage(false));
+		page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("screenshot.png")).setFullPage(false));
 
 	//	page.locator("img[title='MacBook']").screenshot(new ScreenshotOptions().setPath(Paths.get("laptop.png")));
 

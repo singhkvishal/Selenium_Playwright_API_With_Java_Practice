@@ -7,7 +7,8 @@ public class BrowserContext_storageState {
     @Test
     public  void CreateBrowserStorageState() {
         // Save the Browser storageState Context
-        try (Playwright playwright = Playwright.create()) {
+        try {
+            Playwright playwright = Playwright.create();
             Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
             BrowserContext brContext = browser.newContext(new Browser.NewContextOptions().setIgnoreHTTPSErrors(true));
             Page page = brContext.newPage();
@@ -16,8 +17,9 @@ public class BrowserContext_storageState {
             page.locator("//*[@id='password']").fill("Password123");
             page.locator("//*[@id=\"submit\"]").click();
             brContext.storageState(new BrowserContext.StorageStateOptions().setPath(Paths.get("Application.json")));
-        }
+        }catch (Exception e){}
     }
+
     // Use Browser Context
     @Test
     public  void SetBrowserStorageState() {

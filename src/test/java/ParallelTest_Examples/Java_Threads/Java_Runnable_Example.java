@@ -1,22 +1,23 @@
-package ParallelTest_Examples.JavaCode;
+package ParallelTest_Examples.Java_Threads;
 
-public class Multithreading {
+// Main Class
+public class Java_Runnable_Example {
     public static void main(String[] args) {
         int n = 8; // Number of threads
         for (int i = 0; i < n; i++) {
-            TestThread object = new TestThread();
+            Thread object = new Thread(new Runable_Test());
             object.start();
         }
     }
 }
-// Java code for thread creation by extending
-// the Thread class
-class TestThread extends Thread {
+
+class Runable_Test implements Runnable{
     public void run() {
         try {
             // Displaying the thread that is running
             System.out.println("Thread " + Thread.currentThread().getId() + " is running");
         } catch (Exception e) {
+
             // Throwing an exception
             System.out.println("Exception is caught");
         }

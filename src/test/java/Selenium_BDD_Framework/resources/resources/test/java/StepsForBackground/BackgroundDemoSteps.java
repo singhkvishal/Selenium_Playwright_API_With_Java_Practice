@@ -6,8 +6,6 @@ import io.cucumber.java.en.When;
 
 public class BackgroundDemoSteps {
 
-
-
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
 	}
@@ -23,8 +21,6 @@ public class BackgroundDemoSteps {
 	@Then("user is navigated to the homepage")
 	public void user_is_navigated_to_the_homepage() {
 	}
-
-
 
 	@Given("user is logged in")
 	public void user_is_logged_in() {
@@ -45,8 +41,5 @@ public class BackgroundDemoSteps {
 	@Then("quick launch toolbar is displayed")
 	public void quick_launch_toolbar_is_displayed() {
 	}
-
-
-
 
 }
