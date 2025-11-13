@@ -1,21 +1,23 @@
 package Playwright_Examples.RunParallel;
-import com.microsoft.playwright.*;
 
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
 import java.nio.file.Paths;
-
 import static java.util.Arrays.asList;
 
-public class PlaywrightThread extends Thread{
+public class Thread_Example extends Thread {
     private final String browserName;
 
-    private PlaywrightThread(String browserName) {
+    public Thread_Example(String browserName) {
         this.browserName = browserName;
     }
 
     public static void main(String[] args) throws InterruptedException {
         // Create separate playwright thread for each browser.
-        for (String browserName: asList("chromium", "webkit", "firefox")) {
-            Thread thread = new PlaywrightThread(browserName);
+        for (String browserName : asList("chromium", "webkit", "firefox")) {
+            Thread thread = new Thread_Example(browserName);
             thread.start();
         }
     }
@@ -35,15 +37,11 @@ public class PlaywrightThread extends Thread{
     }
 
     private static BrowserType getBrowserType(Playwright playwright, String browserName) {
-        switch (browserName) {
-            case "chromium":
-                return playwright.chromium();
-            case "webkit":
-                return playwright.webkit();
-            case "firefox":
-                return playwright.firefox();
-            default:
-                throw new IllegalArgumentException();
-        }
+        return switch (browserName) {
+            case "chromium" -> playwright.chromium();
+            case "webkit" -> playwright.webkit();
+            case "firefox" -> playwright.firefox();
+            default -> throw new IllegalArgumentException("Unsupported browser: " + browserName);
+        };
     }
 }

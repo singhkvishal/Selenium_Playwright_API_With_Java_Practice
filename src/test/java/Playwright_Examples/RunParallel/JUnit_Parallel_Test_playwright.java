@@ -30,8 +30,8 @@ public class JUnit_Parallel_Test_playwright {
 
     @BeforeEach
     void createContextAndPage() {
-       // context = browser.newContext();
-        page = browser.newContext().newPage();
+        context = browser.newContext();
+        page = context.newPage();
     }
 
     @AfterEach
