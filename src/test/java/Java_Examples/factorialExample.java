@@ -2,7 +2,7 @@ package Java_Examples;
 
 public class factorialExample {
     public static void main(String[] args) {
-        System.out.println(factorial(5));
+        System.out.println(factorial(3));
     }
 
     public static long factorial(long n) {

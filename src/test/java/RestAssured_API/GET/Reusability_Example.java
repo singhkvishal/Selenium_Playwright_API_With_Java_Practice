@@ -29,5 +29,6 @@ public class Reusability_Example {
         Response response1=given()
                 .when()
                 .get("1");
+        System.out.println(response1.toString());
     }
 }

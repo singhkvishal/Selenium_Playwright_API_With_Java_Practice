@@ -6,6 +6,9 @@ import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.SelectOption;
 import org.testng.annotations.Test;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Input_Actions {
@@ -33,5 +36,30 @@ public class Input_Actions {
         // Multiple selected items
        // page.getByTestId("dropdown-class-example").selectOption(new String[] {"red", "green", "blue"});
         page.pause();
+    }
+    @Test
+    public void LaunchChromiumBrowserWithCustomDriverPath (){
+        // Create a Playwright instance
+        Playwright playwright = Playwright.create();
+
+        // Get the path to the Chrome driver
+        String workingDirectory = System.getProperty("user.dir");
+        // I had to copy everything in C:\Users\myUserName\AppData\Local\ms-playwright\chromium-1060\chrome-win to ArchivedPlaywrightDrivers
+        Path driverPathOfChromium = Paths.get(workingDirectory, "ArchivedPlaywrightDrivers");
+        // Set the path to the Chrome driver executable
+        String executablePath = driverPathOfChromium.toString() + "\\chrome.exe";
+
+        // Launch the Chrome browser using the custom driver path, with none-headless mode.
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
+                .setExecutablePath(Paths.get(executablePath)).setHeadless(false));
+        // Create a new page
+        Page page = browser.newPage();
+        // Open a web page
+        page.navigate("https://www.google.com");
+        //Thread.sleep(25000);
+        // Close the browser
+        browser.close();
+        // Close the Playwright instance
+        playwright.close();
     }
 }
